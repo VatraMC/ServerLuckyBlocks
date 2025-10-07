@@ -1,53 +1,55 @@
-# LuckyBlocks (Paper plugin)
+# LuckyBlocks (плагін для Paper)
 
-Tiered Lucky Blocks for Paper servers. Players can receive Lucky Blocks by command and, when placed and broken, a random reward is chosen based on the tier's weighted loot table.
+Рівневі Lucky Blocks для Paper-серверів. Гравці можуть отримувати Lucky Blocks за допомогою команди, а при їх встановленні та руйнуванні випадкова нагорода обирається на основі таблиці луту відповідного рівня.
 
-## Build
+## Збірка
 
-- Requires Java 17+
-- Build with Maven:
+* Потрібна Java 17+
+* Збірка за допомогою Maven:
 
 ```
 mvn -q -DskipTests package
 ```
 
-The built jar will be in `target/luckyblocks-1.0.0.jar`.
+Зібраний jar-файл буде у директорії `target/luckyblocks-1.0.0.jar`.
 
-## Install
+## Встановлення
 
-1. Copy the jar to your server's `plugins/` directory.
-2. Start the server to generate the default `config.yml` and `placed.yml`.
-3. Edit `plugins/LuckyBlocks/config.yml` to customize tiers and loot.
+1. Скопіюйте jar-файл у папку `plugins/` вашого сервера.
+2. Запустіть сервер, щоб згенерувалися стандартні файли `config.yml` і `placed.yml`.
+3. Відредагуйте `plugins/LuckyBlocks/config.yml`, щоб налаштувати рівні та лут.
 
-## Command
+## Команда
 
-- `/luckyblock give <player> <tier> [amount]`
-  - Permission: `luckyblocks.give` (default: OP)
+* `/luckyblock give <гравець> <рівень> [кількість]`
 
-Tab completion is included for player names, tier IDs, and common stack sizes.
+  * Дозвіл: `luckyblocks.give` (за замовчуванням: OP)
 
-## How it works
+Передбачено автодоповнення для імен гравців, ID рівнів і стандартних кількостей предметів.
 
-- The give command creates an item with a hidden tag marking it as a Lucky Block tier.
-- When a player places the block, its location is recorded.
-- When broken, normal drops are suppressed and a random loot entry is executed:
-  - item: drops items at the block location
-  - command: runs a console command (supports `{player}` placeholder)
-  - lightning: strikes lightning effect at player or location
-  - explosion: creates a configurable explosion
+## Як це працює
 
-## Configuration
+* Команда `give` створює предмет із прихованим тегом, який позначає рівень Lucky Block.
+* Коли гравець ставить блок, його місце розташування записується.
+* При руйнуванні блоку звичайні дропи відміняються, і виконується випадковий запис із таблиці луту:
 
-Edit `plugins/LuckyBlocks/config.yml` to add or modify tiers. Each tier has:
+  * `item`: кидає предмети у місці блоку
+  * `command`: виконує консольну команду (підтримується плейсхолдер `{player}`)
+  * `lightning`: створює ефект блискавки біля гравця або в місці блоку
+  * `explosion`: створює вибух із налаштованими параметрами
 
-- `display`: Name shown on the item.
-- `itemMaterial`: The material of the Lucky Block item.
-- `glow`: Whether the item should have a glowing enchantment.
-- `loot`: A list of loot entries with `type` and `weight`.
+## Конфігурація
 
-Supported loot types: `item`, `command`, `lightning`, `explosion`.
+Редагуйте файл `plugins/LuckyBlocks/config.yml`, щоб додавати або змінювати рівні. Кожен рівень має такі параметри:
 
-## Notes
+* `display`: Назва, що відображається на предметі.
+* `itemMaterial`: Матеріал предмета Lucky Block.
+* `glow`: Чи має предмет світитися зачаруванням.
+* `loot`: Список луту з параметрами `type` і `weight`.
 
-- Placed Lucky Blocks are persisted in `plugins/LuckyBlocks/placed.yml` by location.
-- Breaking a Lucky Block in Creative mode still triggers the loot (you can adjust behavior in `BlockBreakListener`).
+Підтримувані типи луту: `item`, `command`, `lightning`, `explosion`.
+
+## Примітки
+
+* Встановлені Lucky Blocks зберігаються у файлі `plugins/LuckyBlocks/placed.yml` за координатами.
+* Руйнування Lucky Block у креативному режимі також активує лут (це можна змінити у класі `BlockBreakListener`).
