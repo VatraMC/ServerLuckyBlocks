@@ -1,0 +1,200 @@
+# LuckyBlocks configuration
+# Define tiers and their loot tables.
+
+# Item representing lucky blocks will use the tier's itemMaterial.
+# Supported loot types: item, command, lightning, explosion
+
+tiers:
+  common:
+    display: "&aCommon Lucky Block"
+    itemMaterial: SPONGE
+    glow: false
+    headTexture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGIxODdlNDE1NjQwZGEwNTcyNjBkMTMwMDk5ODBjMDcyOTRmYzJkNzI0MGNlYzZmOWUzOTA3OTZjYmIxOTQ4NCJ9fX0="
+    loot:
+      - type: item
+        weight: 6
+        material: IRON_INGOT
+        amount: 8-16
+      - type: item
+        weight: 4
+        material: BREAD
+        amount: 4-8
+      - type: command
+        weight: 1
+        command: "say {player} found a common lucky block!"
+      - type: lightning
+        weight: 1
+        target: player
+      - type: item
+        weight: 6
+        material: COAL
+        amount: 16-32
+      - type: item
+        weight: 6
+        material: COBBLESTONE
+        amount: 32-64
+      - type: item
+        weight: 4
+        material: OAK_LOG
+        amount: 16-32
+      - type: item
+        weight: 3
+        material: TORCH
+        amount: 16-32
+      - type: item
+        weight: 3
+        material: IRON_PICKAXE
+        amount: 1
+      - type: item
+        weight: 3
+        material: IRON_SWORD
+        amount: 1
+      - type: item
+        weight: 2
+        material: IRON_HELMET
+        amount: 1
+      - type: item
+        weight: 2
+        material: IRON_CHESTPLATE
+        amount: 1
+      - type: item
+        weight: 2
+        material: IRON_LEGGINGS
+        amount: 1
+      - type: item
+        weight: 2
+        material: IRON_BOOTS
+        amount: 1
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:haste 120 1"
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:speed 120 1"
+
+  rare:
+    display: "&bRare Lucky Block"
+    itemMaterial: GOLD_BLOCK
+    glow: true
+    headTexture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmRiODhmMjZjN2ZjYTQ1MGE1NGI2OTM5YjZmNzRkMzI0Yzg0ZWYyMTM4OTY3MDQ2ZTA5Y2U5OTZiNGE0ODkyMyJ9fX0="
+    loot:
+      - type: item
+        weight: 5
+        material: GOLD_INGOT
+        amount: 8-16
+      - type: item
+        weight: 3
+        material: DIAMOND
+        amount: 1-3
+      - type: lightning
+        weight: 1
+        target: location
+      - type: command
+        weight: 1
+        command: "give {player} GOLDEN_APPLE 1"
+      - type: item
+        weight: 5
+        material: RAW_IRON
+        amount: 16-32
+      - type: item
+        weight: 4
+        material: RAW_GOLD
+        amount: 8-16
+      - type: item
+        weight: 4
+        material: LAPIS_LAZULI
+        amount: 16-32
+      - type: item
+        weight: 4
+        material: REDSTONE
+        amount: 32-64
+      - type: item
+        weight: 3
+        material: IRON_BLOCK
+        amount: 1-3
+      - type: item
+        weight: 3
+        material: EMERALD
+        amount: 1-3
+      - type: item
+        weight: 2
+        material: DIAMOND_PICKAXE
+        amount: 1
+      - type: item
+        weight: 2
+        material: DIAMOND_SWORD
+        amount: 1
+      - type: item
+        weight: 2
+        material: DIAMOND_HELMET
+        amount: 1
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:strength 90 1"
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:resistance 90 0"
+
+  epic:
+    display: "&dEpic Lucky Block"
+    itemMaterial: DIAMOND_BLOCK
+    glow: true
+    headTexture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzcyNWRhODJhYTBhZGU1ZDUyYmQyMDI0ZjRiYzFkMDE5ZmMwMzBlOWVjNWUwZWMxNThjN2Y5YTZhYTBjNDNiYSJ9fX0="
+    loot:
+      - type: item
+        weight: 5
+        material: NETHERITE_SCRAP
+        amount: 1-2
+      - type: item
+        weight: 3
+        material: DIAMOND
+        amount: 3-6
+      - type: command
+        weight: 1
+        command: "effect give {player} minecraft:luck 60 1"
+      - type: explosion
+        weight: 1
+        power: 2.0
+        fire: false
+        breakBlocks: false
+      - type: item
+        weight: 5
+        material: EMERALD
+        amount: 3-6
+      - type: item
+        weight: 4
+        material: ANCIENT_DEBRIS
+        amount: 1-2
+      - type: item
+        weight: 3
+        material: DIAMOND_BLOCK
+        amount: 1
+      - type: item
+        weight: 3
+        material: GOLD_BLOCK
+        amount: 1-2
+      - type: item
+        weight: 3
+        material: NETHERITE_INGOT
+        amount: 1
+      - type: item
+        weight: 3
+        material: DIAMOND_CHESTPLATE
+        amount: 1
+      - type: item
+        weight: 3
+        material: DIAMOND_LEGGINGS
+        amount: 1
+      - type: item
+        weight: 3
+        material: DIAMOND_BOOTS
+        amount: 1
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:regeneration 60 1"
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:haste 300 2"
+      - type: command
+        weight: 2
+        command: "effect give {player} minecraft:strength 120 1"

@@ -1,0 +1,16 @@
+name: LuckyBlocks
+main: com.cascade.luckyblocks.LuckyBlocksPlugin
+version: 1.0.0
+api-version: '1.20'
+authors: [ "Cascade" ]
+description: Tiered Lucky Blocks with configurable loot and a give command.
+commands:
+  luckyblock:
+    description: Give lucky blocks to players
+    usage: /luckyblock give <player> <tier> [amount]
+    aliases: [ luckyblocks, lb ]
+    permission: luckyblocks.give
+permissions:
+  luckyblocks.give:
+    description: Allows using /luckyblock give
+    default: op
